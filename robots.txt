@@ -1,0 +1,36 @@
+# robots.txt for https://www.queentouchtech.com/
+# Managed by Queen Touch Technology (QTT)
+# Last updated: 2025-10-23
+
+User-agent: *
+# Allow essential pages
+Allow: /
+Allow: /what-we-do/
+Allow: /who-we-are/
+Allow: /insights/
+Allow: /Products/
+
+# Disallow sensitive or redundant directories (if exist)
+Disallow: /vendor/
+Disallow: /css/
+Disallow: /js/
+Disallow: /img/
+Disallow: /assets/
+Disallow: /temp/
+Disallow: /cgi-bin/
+Disallow: /admin/
+Disallow: /scripts/
+
+# Disallow search results or error pages
+Disallow: /404.html
+
+# Crawl-delay for better server performance
+Crawl-delay: 10
+
+# Sitemap reference
+Sitemap: https://www.queentouchtech.com/sitemap.xml
+
+# Contact information for site admin
+# Owner: Queen Touch Technology (QTT)
+# Email: info@queentouchtech.com
+# Address: 21B/4, Annai Thangam Complex, W.G.C Road, Thoothukudi – 628002, Tamil Nadu, India

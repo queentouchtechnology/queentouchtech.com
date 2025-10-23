@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Root Pages -->
+  <url>
+    <loc>https://www.queentouchtech.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.queentouchtech.com/terms.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.queentouchtech.com/privacy-policy.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.queentouchtech.com/404.html</loc>
+    <priority>0.2</priority>
+  </url>
+
+  <!-- What We Do -->
+  <url><loc>https://www.queentouchtech.com/what-we-do/</loc></url>
+  <url><loc>https://www.queentouchtech.com/what-we-do/ai-data-analytics.html</loc></url>
+  <url><loc>https://www.queentouchtech.com/what-we-do/cloud-devops-solutions.html</loc></url>
+  <url><loc>https://www.queentouchtech.com/what-we-do/cybersecurity-compliance.html</loc></url>
+  <url><loc>https://www.queentouchtech.com/what-we-do/digital-application-engineering.html</loc></url>
+  <url><loc>https://www.queentouchtech.com/what-we-do/digital-experience-design.html</loc></url>
+  <url><loc>https://www.queentouchtech.com/what-we-do/digital-strategy-consulting.html</loc></url>
+  <url><loc>https://www.queentouchtech.com/what-we-do/enterprise-software-solutions.html</loc></url>
+  <url><loc>https://www.queentouchtech.com/what-we-do/iot-smart-solutions.html</loc></url>
+  <url><loc>https://www.queentouchtech.com/what-we-do/sustainability-green-it.html</loc></url>
+  <url><loc>https://www.queentouchtech.com/what-we-do/technology-infrastructure-services.html</loc></url>
+
+  <!-- Who We Are -->
+  <url>
+    <loc>https://www.queentouchtech.com/who-we-are/</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Insights -->
+  <url>
+    <loc>https://www.queentouchtech.com/insights/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.queentouchtech.com/insights/ai-data/ai-data-decision-making/</loc>
+  </url>
+  <url>
+    <loc>https://www.queentouchtech.com/insight/digital-transformation-smes/</loc>
+  </url>
+
+  <!-- Products -->
+  <url><loc>https://www.queentouchtech.com/Products/officepulse/</loc></url>
+  <url><loc>https://www.queentouchtech.com/Products/officepulse/office-pulse-attendance-leave/</loc></url>
+
+  <url><loc>https://www.queentouchtech.com/Products/quizmaster/</loc></url>
+  <url><loc>https://www.queentouchtech.com/Products/quizmaster/v7-updates/</loc></url>
+
+  <url><loc>https://www.queentouchtech.com/Products/tabletap/</loc></url>
+
+</urlset>
