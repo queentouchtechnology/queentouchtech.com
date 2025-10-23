@@ -1,16 +1,17 @@
 # robots.txt for https://www.queentouchtech.com/
 # Managed by Queen Touch Technology (QTT)
-# Last updated: 2025-10-23
+# Updated: 2025-10-23
+# Purpose: Optimize crawl efficiency and prevent duplicate content indexing
 
 User-agent: *
-# Allow essential pages
+# ✅ Allow main site content
 Allow: /
 Allow: /what-we-do/
 Allow: /who-we-are/
 Allow: /insights/
 Allow: /Products/
 
-# Disallow sensitive or redundant directories (if exist)
+# 🚫 Disallow system & resource folders (not useful for indexing)
 Disallow: /vendor/
 Disallow: /css/
 Disallow: /js/
@@ -21,16 +22,30 @@ Disallow: /cgi-bin/
 Disallow: /admin/
 Disallow: /scripts/
 
-# Disallow search results or error pages
+# 🚫 Prevent crawling of error and non-content pages
 Disallow: /404.html
 
-# Crawl-delay for better server performance
+# 🚫 Block URL parameters commonly used in marketing & tracking
+# (Prevents duplicate pages and crawl bloat)
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+Disallow: /*?session=*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+Disallow: /*?campaign=*
+Disallow: /*?page=*
+Disallow: /*?filter=*
+Disallow: /*?sort=*
+
+# 🕒 Moderate crawl rate for server performance
 Crawl-delay: 10
 
-# Sitemap reference
+# 🔗 Sitemap for structured indexing
 Sitemap: https://www.queentouchtech.com/sitemap.xml
 
-# Contact information for site admin
-# Owner: Queen Touch Technology (QTT)
+# 📞 Contact Information (Optional for crawlers)
+# Organization: Queen Touch Technology (QTT)
 # Email: info@queentouchtech.com
-# Address: 21B/4, Annai Thangam Complex, W.G.C Road, Thoothukudi – 628002, Tamil Nadu, India
+# Address: 21B/4, Annai Thangam Complex, W.G.C Road (Near BSNL Office), Thoothukudi – 628002, Tamil Nadu, India
+# Owner: Sathish Kumar S
