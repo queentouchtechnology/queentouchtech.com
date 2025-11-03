@@ -1,0 +1,179 @@
+/* =============================================================
+   THEME ELEMENTS (Red Variant)
+   Brand Color: #C9151E (Primary)
+   Adjusted all primary blues, hover shades, gradients, and rgba
+   for Table Tap application (Queen Touch Technology)
+   ============================================================= */
+
+:root {
+  --color-primary: #C9151E;
+  --color-primary-rgba: rgba(201, 21, 30, 1);
+  --color-primary-rgba-half: rgba(201, 21, 30, 0.5);
+  --color-primary-rgba-light: rgba(201, 21, 30, 0.2);
+  --color-primary-dark: #a91219;
+  --color-primary-light: #e43a41;
+  --color-primary-text: #ffffff;
+}
+
+/* ---------------------- Buttons ---------------------- */
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary-text);
+  transition: all 0.3s ease-in-out;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-primary-text);
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  transition: all 0.3s ease-in-out;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+}
+
+/* ---------------------- Background Utilities ---------------------- */
+.bg-primary {
+  background-color: var(--color-primary) !important;
+  color: var(--color-primary-text) !important;
+}
+.bg-primary-light {
+  background-color: var(--color-primary-light) !important;
+}
+.bg-primary-gradient {
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+  color: var(--color-primary-text);
+}
+
+/* ---------------------- Text Utilities ---------------------- */
+.text-primary {
+  color: var(--color-primary) !important;
+}
+.text-primary:hover {
+  color: var(--color-primary-dark) !important;
+}
+
+/* ---------------------- Borders ---------------------- */
+.border-primary {
+  border-color: var(--color-primary) !important;
+}
+
+/* ---------------------- Badges ---------------------- */
+.badge-primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  font-weight: 600;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.6rem;
+}
+
+/* ---------------------- Progress Bars ---------------------- */
+.progress-bar-primary {
+  background-color: var(--color-primary);
+}
+
+/* ---------------------- Icons and Highlights ---------------------- */
+.icon-primary {
+  color: var(--color-primary);
+}
+.icon-primary-bg {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+/* ---------------------- Links ---------------------- */
+a,
+a:focus {
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* ---------------------- Cards ---------------------- */
+.card-primary {
+  border-top: 3px solid var(--color-primary);
+}
+.card-primary-header {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+}
+.card-primary-accent:after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  margin-top: 0.5rem;
+}
+
+/* ---------------------- Alerts ---------------------- */
+.alert-primary {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+}
+
+/* ---------------------- Forms ---------------------- */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-rgba-light);
+}
+
+/* ---------------------- Tables ---------------------- */
+.table-primary th {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+}
+.table-primary td {
+  border-top: 1px solid var(--color-primary-light);
+}
+
+/* ---------------------- Pagination ---------------------- */
+.pagination .page-item.active .page-link {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary-text);
+}
+.pagination .page-link:hover {
+  color: var(--color-primary);
+}
+
+/* ---------------------- Misc ---------------------- */
+.btn-link-primary {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.btn-link-primary:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.progress-primary {
+  background: linear-gradient(to right, var(--color-primary-light), var(--color-primary));
+}
+
+/* ---------------------- Shadows ---------------------- */
+.shadow-primary {
+  box-shadow: 0 4px 10px var(--color-primary-rgba-light);
+}
+
+/* ---------------------- Gradient Utilities ---------------------- */
+.gradient-primary {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-primary-text);
+}
+
+/* ---------------------- End ---------------------- */
