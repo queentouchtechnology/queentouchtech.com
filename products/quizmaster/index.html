@@ -11,14 +11,14 @@
   <meta name="description" content="Quiz Master — a scalable online exam & study platform by Queen Touch Technology. Create timed exams, reusable papers, track performance, and engage learners with real-time scoreboards and analytics." />
   <meta name="keywords" content="Quiz Master, online exam platform, quiz app, exam software, online assessment, study platform, Quiz Master India, Quiz Master app" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <link rel="canonical" href="https://www.queentouchtech.com/Products/quizmaster/" />
+  <link rel="canonical" href="https://www.queentouchtech.com/products/quizmaster/" />
 
   <!-- Open Graph -->
   <meta property="og:locale" content="en_IN" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Quiz Master – Online Exam & Assessment App | Queen Touch Technology" />
   <meta property="og:description" content="Create, schedule and grade exams easily with Quiz Master — the complete assessment and study platform for educators, trainers and institutions." />
-  <meta property="og:url" content="https://www.queentouchtech.com/Products/quizmaster/" />
+  <meta property="og:url" content="https://www.queentouchtech.com/products/quizmaster/" />
   <meta property="og:site_name" content="Queen Touch Technology (QTT)" />
   <meta property="og:image" content="https://www.queentouchtech.com/img/products/quizmaster(online-exam-app).png" />
   <meta property="og:image:alt" content="Quiz Master – Online Exam & Study Platform" />
@@ -76,7 +76,7 @@
     "@type": "SoftwareApplication",
     "name": "Quiz Master",
     "alternateName": "QuizMaster - Online Exam & Study Platform",
-    "url": "https://www.queentouchtech.com/Products/quizmaster/",
+    "url": "https://www.queentouchtech.com/products/quizmaster/",
     "logo": "https://www.queentouchtech.com/img/products/quizmaster(online-exam-app).png",
     "applicationCategory": "EducationApplication",
     "operatingSystem": "Android",
@@ -1067,7 +1067,7 @@ data-plugin-options="{'minWindowWidth': 0}">
 											rows="3" placeholder="Your Message" id="queryMessage" required></textarea>
 									</div>
 									<div class="col-12 mt-3 text-end">
-										<button class="btn btn-primary text-color-light text-2 positive-ls-3 py-3 px-5" type="submit">
+										<button id="submitBtn" class="btn btn-primary text-color-light text-2 positive-ls-3 py-3 px-5" type="submit">
 											<strong class="position-relative top-1">SEND MESSAGE</strong>
 										</button>
 									</div>
@@ -1129,6 +1129,11 @@ data-plugin-options="{'minWindowWidth': 0}">
 			<script>
 			async function submitForm(e) {
 				e.preventDefault();
+				const btn = document.getElementById('submitBtn');
+	const originalText = btn.innerHTML;
+	btn.disabled = true;
+	btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Please wait...';
+
 			
 				try {
 					const response = await fetch('https://n8n.bizzui.in/webhook/f84f39f7-b9c0-4664-907c-00cd5760e94b', {
@@ -1154,6 +1159,10 @@ data-plugin-options="{'minWindowWidth': 0}">
 					console.error("Error:", err);
 					showThemeModal("❌ Error submitting form: " + err.message);
 				}
+				finally {
+		btn.disabled = false;
+		btn.innerHTML = originalText;
+	}
 			}
 			
 			// Show modal message dynamically
