@@ -23,6 +23,8 @@
   --primary-rgba-70: rgba(0, 136, 204, 0.7);
   --primary-rgba-80: rgba(0, 136, 204, 0.8);
   --primary-rgba-90: rgba(0, 136, 204, 0.9);
+
+/* Old secondary Colors 
   --secondary: #e36159;
   --secondary-100: #df4c43;
   --secondary-200: #dd4238;
@@ -40,6 +42,30 @@
   --secondary-rgba-70: rgba(227, 97, 89, 0.7);
   --secondary-rgba-80: rgba(227, 97, 89, 0.8);
   --secondary-rgba-90: rgba(227, 97, 89, 0.9);
+*/
+
+
+  --secondary: #3D90FF;
+  --secondary-100: #2682FF;
+  --secondary-200: #197AFF;
+  --secondary-300: #0D72FF;
+  --secondary--100: #57A0FF;
+  --secondary--200: #6BAEFF;
+  --secondary--300: #80BCFF;
+
+  --secondary-rgba-0: rgba(61, 144, 255, 0);
+  --secondary-rgba-10: rgba(61, 144, 255, 0.1);
+  --secondary-rgba-20: rgba(61, 144, 255, 0.2);
+  --secondary-rgba-30: rgba(61, 144, 255, 0.3);
+  --secondary-rgba-40: rgba(61, 144, 255, 0.4);
+  --secondary-rgba-50: rgba(61, 144, 255, 0.5);
+  --secondary-rgba-60: rgba(61, 144, 255, 0.6);
+  --secondary-rgba-70: rgba(61, 144, 255, 0.7);
+  --secondary-rgba-80: rgba(61, 144, 255, 0.8);
+  --secondary-rgba-90: rgba(61, 144, 255, 0.9);
+
+
+
   --tertiary: #2BAAB1;
   --tertiary-100: #26969c;
   --tertiary-200: #248c92;
