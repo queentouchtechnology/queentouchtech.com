@@ -1,0 +1,84 @@
+# ============================
+# OS & Editor Files
+# ============================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*.log
+
+# ============================
+# Environment Files
+# ============================
+.env
+.env.*
+*.local
+
+# ============================
+# Dependency Folders
+# ============================
+node_modules/
+vendor/
+bower_components/
+
+# ============================
+# Build & Cache
+# ============================
+dist/
+build/
+.cache/
+.tmp/
+coverage/
+
+# ============================
+# Theme (BLOCKED)
+# ============================
+theme/
+themes/
+**/theme/
+**/themes/
+
+# ============================
+# Assets (optional)
+# ============================
+*.map
+*.min.js
+*.min.css
+
+# ============================
+# Uploads / Generated Files
+# ============================
+uploads/
+storage/
+public/storage/
+
+# ============================
+# Framework Specific
+# ============================
+
+# Laravel
+bootstrap/cache/
+storage/logs/
+
+# WordPress
+wp-content/cache/
+wp-content/uploads/
+wp-config.php
+
+# ============================
+# Package Managers
+# ============================
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ============================
+# Misc
+# ============================
+*.bak
+*.old
+*.tmp
