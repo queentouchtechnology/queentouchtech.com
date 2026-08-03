@@ -59,4 +59,94 @@
 
   <url><loc>https://www.queentouchtech.com/Products/tabletap/</loc></url>
 
+  <!-- Services - Website Development -->
+  <url><loc>https://www.queentouchtech.com/services/landing-page-website/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/static-pages-5-page/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/dynamic-website/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/wordpress-website/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/company-profile-website/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/school-college-website/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/hospital-website/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/real-estate-website/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/ecommerce-website/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/multi-vendor-marketplace/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/lms-portal/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/crm-portal/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/erp-software/</loc><priority>0.8</priority></url>
+
+  <!-- Services - Mobile App Development -->
+  <url><loc>https://www.queentouchtech.com/services/basic-android-app/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/basic-ios-app/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/flutter-mobile-app/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/food-delivery-app/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/attendance-app/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/restaurant-order-app/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/gym-management-app/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/custom-business-app/</loc><priority>0.8</priority></url>
+
+  <!-- Services - Enterprise Software Solutions -->
+  <url><loc>https://www.queentouchtech.com/services/hrms-software/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/payroll-system/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/hospital-management-system/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/school-erp/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/inventory-management/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/manufacturing-erp/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/custom-saas-platform/</loc><priority>0.8</priority></url>
+
+  <!-- Services - AI & Automation -->
+  <url><loc>https://www.queentouchtech.com/services/ai-chatbot-development/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/ai-voice-agent/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/openai-gemini-integration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/n8n-workflow-automation/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/whatsapp-ai-bot/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/ocr-document-automation/</loc><priority>0.8</priority></url>
+
+  <!-- Services - WhatsApp & Communication -->
+  <url><loc>https://www.queentouchtech.com/services/whatsapp-business-api-setup/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/whatsapp-chatbot/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/whatsapp-broadcast-system/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/whatsapp-crm-integration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/telegram-bot-development/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/bulk-sms-portal/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/email-automation/</loc><priority>0.8</priority></url>
+
+  <!-- Services - AI Services -->
+  <url><loc>https://www.queentouchtech.com/services/ai-knowledge-base/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/ai-customer-support-assistant/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/ai-document-search/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/ai-data-analytics-dashboard/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/ai-content-generator/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/ai-meeting-assistant/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/ai-lead-qualification-bot/</loc><priority>0.8</priority></url>
+
+  <!-- Services - API & Integration Services -->
+  <url><loc>https://www.queentouchtech.com/services/rest-api-development/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/third-party-api-integration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/payment-api-integration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/shipping-api-integration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/razorpay-integration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/cashfree-integration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/phonepe-integration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/shiprocket-integration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/google-maps-integration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/firebase-integration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/google-login-integration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/microsoft-login-integration/</loc><priority>0.8</priority></url>
+
+  <!-- Services - Cloud -->
+  <url><loc>https://www.queentouchtech.com/services/vps-server-setup/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/docker-deployment/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/aws-deployment/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/azure-deployment/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/google-cloud-setup/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/kubernetes-deployment/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/linux-server-administration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/windows-server-administration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/nginx-configuration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/apache-configuration/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/docker-compose-setup/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/ci-cd-pipeline-setup/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/github-actions-setup/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/services/monitoring-dashboard/</loc><priority>0.8</priority></url>
+
 </urlset>

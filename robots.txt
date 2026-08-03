@@ -1,31 +1,35 @@
 # robots.txt for https://www.queentouchtech.com/
 # Managed by Queen Touch Technology (QTT)
-# Updated: 2025-10-23
-# Purpose: Optimize crawl efficiency and prevent duplicate content indexing
+# Updated: 2026-08-03
+# Purpose: Allow full crawling and rendering of all indexable content.
+# Google explicitly requires access to CSS, JS, and images to render pages
+# correctly for mobile-friendliness and indexing — these must NOT be blocked.
 
 User-agent: *
-# ✅ Allow main site content
 Allow: /
+
+# Explicit allows for key content areas (documentation only — already covered by Allow: /)
 Allow: /what-we-do/
 Allow: /who-we-are/
 Allow: /insights/
-Allow: /Products/
+Allow: /service/
+Allow: /products/
 
-# 🚫 Disallow system & resource folders (not useful for indexing)
-Disallow: /vendor/
-Disallow: /css/
-Disallow: /js/
-Disallow: /img/
-Disallow: /assets/
-Disallow: /temp/
+# Do not block rendering resources (CSS/JS/images). Google needs these.
+# (Previously blocked here — removed as it can cause indexing/rendering issues.)
+
+# Non-content / system folders only
 Disallow: /cgi-bin/
 Disallow: /admin/
 Disallow: /scripts/
+Disallow: /temp/
 
-# 🚫 Prevent crawling of error and non-content pages
+# Error and legacy/duplicate pages
 Disallow: /404.html
+Disallow: /products/officepulse/index-old.html
+Disallow: /terms.html
 
-# 🚫 Block URL parameters commonly used in marketing & tracking
+# Block URL parameters commonly used in marketing & tracking
 # (Prevents duplicate pages and crawl bloat)
 Disallow: /*?utm_*
 Disallow: /*?ref=*
@@ -34,18 +38,12 @@ Disallow: /*?session=*
 Disallow: /*?fbclid=*
 Disallow: /*?gclid=*
 Disallow: /*?campaign=*
-Disallow: /*?page=*
-Disallow: /*?filter=*
-Disallow: /*?sort=*
 
-# 🕒 Moderate crawl rate for server performance
-Crawl-delay: 10
-
-# 🔗 Sitemap for structured indexing
+# Sitemap for structured indexing
 Sitemap: https://www.queentouchtech.com/sitemap.xml
 
-# 📞 Contact Information (Optional for crawlers)
+# Contact Information (informational only)
 # Organization: Queen Touch Technology (QTT)
-# Email: info@queentouchtech.com
+# Email: sathish@queentouchtech.in
 # Address: 21B/4, Annai Thangam Complex, W.G.C Road (Near BSNL Office), Thoothukudi – 628002, Tamil Nadu, India
 # Owner: Sathish Kumar S
