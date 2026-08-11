@@ -26,7 +26,6 @@ Disallow: /temp/
 
 # Error and legacy/duplicate pages
 Disallow: /404.html
-Disallow: /products/officepulse/index-old.html
 Disallow: /terms.html
 
 # Block URL parameters commonly used in marketing & tracking

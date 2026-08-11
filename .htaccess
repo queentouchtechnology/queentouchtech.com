@@ -23,7 +23,12 @@
   # 2. Legacy / duplicate-content redirects (301, preserves link equity)
   # ----------------------------------------------------------
   RewriteRule ^terms\.html$ /terms-of-service.html [L,R=301]
-  RewriteRule ^products/officepulse/index-old\.html$ /products/officepulse/ [L,R=301]
+  RewriteRule ^demo-seo-2-services\.html$ /service/ [L,R=301]
+
+  # Discontinued products (OfficePulse, QuizMaster, TableTap) -> Products hub
+  RewriteRule ^products/officepulse(/.*)?$ /products/ [L,R=301]
+  RewriteRule ^products/quizmaster(/.*)?$ /products/ [L,R=301]
+  RewriteRule ^products/tabletap(/.*)?$ /products/ [L,R=301]
 
   # Old space-containing Insights URLs -> clean kebab-case URLs
   RewriteRule ^insights/local-thoothukudi-focus/How\ Smart\ Technology\ Helps\ Businesses\ Scale\ Faster/?$ /insights/local-thoothukudi-focus/how-smart-technology-helps-businesses-scale-faster/ [L,R=301,NC]

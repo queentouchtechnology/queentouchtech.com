@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Queen Touch Technology — Brand Layer
+   Scoped, additive stylesheet for brand-palette components (product cards,
+   GEO/factual blocks, product pages). Loaded after theme/custom CSS so its
+   rules win on the specific classes below without touching the base theme.
+   ========================================================================== */
+
+:root {
+  --qtt-black: #0B0D12;
+  --qtt-surface: #171A21;
+  --qtt-white: #FFFFFF;
+  --qtt-gray: #8D95A5;
+  --qtt-bg-light: #F7F8FA;
+  --qtt-blue: #3B5CFF;
+  --qtt-blue-dark: #2946D9;
+}
+
+/* ---- Section shells ---- */
+.qtt-section {
+  background-color: var(--qtt-bg-light);
+  padding: 5rem 0;
+}
+.qtt-section-dark {
+  background-color: var(--qtt-black);
+  color: var(--qtt-white);
+}
+.qtt-eyebrow {
+  display: inline-block;
+  color: var(--qtt-blue);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.qtt-section-title {
+  color: var(--qtt-black);
+  font-weight: 700;
+}
+.qtt-section-dark .qtt-section-title {
+  color: var(--qtt-white);
+}
+.qtt-section-lead {
+  color: var(--qtt-gray);
+  max-width: 46rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- Buttons ---- */
+.qtt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+.qtt-btn:focus-visible {
+  outline: 2px solid var(--qtt-blue);
+  outline-offset: 2px;
+}
+.qtt-btn-primary {
+  background-color: var(--qtt-blue);
+  color: var(--qtt-white);
+}
+.qtt-btn-primary:hover {
+  background-color: var(--qtt-blue-dark);
+  color: var(--qtt-white);
+}
+.qtt-btn-outline {
+  background-color: transparent;
+  color: var(--qtt-black);
+  border-color: #D9DCE3;
+}
+.qtt-btn-outline:hover {
+  border-color: var(--qtt-blue);
+  color: var(--qtt-blue);
+}
+.qtt-section-dark .qtt-btn-outline {
+  color: var(--qtt-white);
+  border-color: #363B47;
+}
+.qtt-section-dark .qtt-btn-outline:hover {
+  border-color: var(--qtt-blue);
+  color: var(--qtt-white);
+}
+
+/* ---- Product cards ---- */
+.qtt-product-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+@media (min-width: 576px) {
+  .qtt-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1200px) {
+  .qtt-product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.qtt-product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--qtt-white);
+  border: 1px solid #E7E9EE;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 1px 2px rgba(11,13,18,0.04);
+  transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+}
+.qtt-product-card:hover {
+  box-shadow: 0 12px 28px rgba(11,13,18,0.08);
+  border-color: #D9DCE3;
+  transform: translateY(-2px);
+}
+.qtt-product-category {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--qtt-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.6rem;
+}
+.qtt-product-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--qtt-black);
+  margin: 0 0 0.5rem;
+}
+.qtt-product-desc {
+  color: var(--qtt-gray);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+.qtt-product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+.qtt-product-learnmore {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--qtt-black);
+  text-decoration: none;
+}
+.qtt-product-learnmore:hover {
+  color: var(--qtt-blue);
+}
+
+/* ---- GEO / factual answer blocks ---- */
+.qtt-geo-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .qtt-geo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.qtt-geo-item h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--qtt-black);
+  margin-bottom: 0.5rem;
+}
+.qtt-geo-item p, .qtt-geo-item li {
+  color: var(--qtt-gray);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+.qtt-geo-item ul {
+  padding-left: 1.1rem;
+  margin: 0;
+}
+
+/* ---- Simple product detail page layout ---- */
+.qtt-product-hero {
+  background-color: var(--qtt-black);
+  color: var(--qtt-white);
+  padding: 4rem 0 3rem;
+}
+.qtt-product-hero .qtt-product-category {
+  color: #8FA0FF;
+}
+.qtt-product-hero h1 {
+  color: var(--qtt-white);
+  font-weight: 700;
+}
+.qtt-product-hero p.lead {
+  color: var(--qtt-gray);
+  max-width: 42rem;
+}
+.qtt-breadcrumb {
+  font-size: 0.8125rem;
+  color: var(--qtt-gray);
+}
+.qtt-breadcrumb a {
+  color: var(--qtt-gray);
+  text-decoration: none;
+}
+.qtt-breadcrumb a:hover {
+  color: var(--qtt-blue);
+}
