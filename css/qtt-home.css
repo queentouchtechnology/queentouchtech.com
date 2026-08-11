@@ -1,0 +1,242 @@
+/* ==========================================================================
+   Queen Touch Technology — Homepage layout (index.html only)
+   Normal vertical document flow. Replaces the old horizontal Locomotive
+   Scroll "panel" layout. Not used by any other page.
+   ========================================================================== */
+
+.qtt-container {
+  width: min(100% - 32px, 1280px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- Header ---- */
+#header .header-logo img { display: block; }
+
+/* ---- Hero ---- */
+.qtt-hero {
+  background-color: var(--qtt-black);
+  color: var(--qtt-white);
+  padding: 8rem 0 5rem;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+.qtt-hero-eyebrow {
+  color: #8FA0FF;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+.qtt-hero h1 {
+  color: var(--qtt-white);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  max-width: 46rem;
+}
+.qtt-hero p.lead {
+  color: var(--qtt-gray);
+  max-width: 38rem;
+  font-size: 1.15rem;
+  margin-top: 1.25rem;
+}
+.qtt-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.qtt-hero-actions .qtt-btn {
+  padding: 0.85rem 1.75rem;
+  font-size: 0.95rem;
+}
+
+/* ---- About (top, short intro) ---- */
+.qtt-about {
+  padding: 5rem 0;
+  background-color: var(--qtt-white);
+}
+.qtt-about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .qtt-about-grid { grid-template-columns: 1.1fr 0.9fr; }
+}
+.qtt-about-card {
+  background-color: var(--qtt-bg-light);
+  border: 1px solid #E7E9EE;
+  border-radius: 12px;
+  padding: 2.5rem;
+}
+.qtt-about-card p {
+  color: var(--qtt-gray);
+}
+
+/* ---- Services ---- */
+.qtt-services-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 576px) {
+  .qtt-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1200px) {
+  .qtt-services-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.qtt-services-card {
+  border: 1px solid #262A33;
+  border-radius: 12px;
+  padding: 1.75rem;
+  height: 100%;
+}
+.qtt-services-card h3 {
+  color: var(--qtt-white);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+.qtt-services-card h4 {
+  font-size: 0.95rem;
+  margin: 1rem 0 0.35rem;
+}
+.qtt-services-card h4 a {
+  color: var(--qtt-white);
+  text-decoration: none;
+}
+.qtt-services-card h4 a:hover { color: #93a5ff; }
+.qtt-services-card p {
+  color: #A8AFBD;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---- Trust / stats ---- */
+.qtt-trust {
+  padding: 5rem 0;
+  background-color: var(--qtt-black);
+  color: var(--qtt-white);
+  text-align: center;
+}
+.qtt-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  text-align: left;
+}
+@media (min-width: 576px) {
+  .qtt-trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1200px) {
+  .qtt-trust-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.qtt-trust-item {
+  border: 1px solid #262A33;
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+.qtt-trust-item h3 {
+  color: #93a5ff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.qtt-trust-item p {
+  color: #A8AFBD;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* ---- Insights ---- */
+.qtt-insights {
+  padding: 5rem 0;
+  background-color: var(--qtt-bg-light);
+}
+.qtt-insights-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 992px) {
+  .qtt-insights-grid { grid-template-columns: 0.8fr 1.2fr; }
+}
+.qtt-insights-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #E7E9EE;
+}
+.qtt-insights-list-item:last-child { border-bottom: none; }
+.qtt-insights-badge {
+  flex: 0 0 auto;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: var(--qtt-black);
+  color: var(--qtt-white);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+}
+.qtt-insights-list-item a {
+  flex: 1 1 auto;
+  color: var(--qtt-black);
+  text-decoration: none;
+  font-weight: 600;
+}
+.qtt-insights-list-item a:hover { color: var(--qtt-blue); }
+
+/* ---- Contact / CTA ---- */
+.qtt-contact {
+  padding: 5rem 0;
+  background-color: var(--qtt-black);
+  color: var(--qtt-white);
+}
+.qtt-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 992px) {
+  .qtt-contact-grid { grid-template-columns: 0.8fr 1.2fr; }
+}
+.qtt-contact-info h4 { color: var(--qtt-white); opacity: 0.85; }
+.qtt-contact-info ul { list-style: none; padding: 0; }
+.qtt-contact-info a { color: var(--qtt-white); text-decoration: none; }
+.qtt-contact-info a:hover { color: #93a5ff; }
+.qtt-contact-form .form-control {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff;
+}
+.qtt-contact-form .form-control::placeholder { color: rgba(255,255,255,0.55); }
+.qtt-contact-form .form-control:focus {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--qtt-blue);
+  box-shadow: 0 0 0 0.2rem var(--primary-rgba-30, rgba(59,92,255,0.3));
+  color: #fff;
+}
+.qtt-contact-socials {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.qtt-contact-socials a {
+  color: var(--qtt-white);
+  opacity: 0.8;
+}
+.qtt-contact-socials a:hover { opacity: 1; color: #93a5ff; }

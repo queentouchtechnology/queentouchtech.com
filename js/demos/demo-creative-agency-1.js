@@ -1,74 +1,17 @@
 /*
-Name:           Demo Creative Agency 1
-Written by:     Okler Themes - (http://www.okler.net)
-Theme Version:  12.1.0
+Queen Touch Technology — Homepage init
+Normal vertical page: smooth-scrolls in-page nav links (data-hash).
+(Locomotive Scroll's horizontal-panel mode has been intentionally removed.)
 */
-
-// Disable Scroll to Top
-theme.PluginScrollToTop.initialize = () => {};
-
 (($ => {
 
-    if (typeof LocomotiveScroll !== 'undefined') {
+    $('[data-hash]').off().on('click', function(e) {
+        const targetId = $(this).attr('href');
+        const anchor = $(targetId).get(0);
+        if (!anchor) return;
+        e.preventDefault();
+        e.stopPropagation();
+        anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
 
-		window.scrollTo(0,0);
-
-		setTimeout(() => {
-
-			/*
-			Horizontal Scroll
-			*/
-			let scroller;
-
-			let initLocoScroll = () => {
-
-				window.scrollTo(0,0);
-
-				scroller = new LocomotiveScroll({
-				    el: document.querySelector('[data-scroll-container]'),
-				    smooth: true,
-				    direction: (window.innerWidth > 1199 ? "horizontal" : "vertical"),
-					mobile: {
-						breakpoint: 0,
-						smooth: true,
-						direction: (window.innerWidth > 1199 ? "horizontal" : "vertical")
-					},
-					tablet: {
-						breakpoint: 0,
-						smooth: true,
-						direction: (window.innerWidth > 1199 ? "horizontal" : "vertical")
-					}
-				});
-
-				scroller.on("scroll", () => {
-					ScrollTrigger.update();
-				});
-			}
-
-			initLocoScroll();
-
-			$('[data-hash]').off().on('click', function(e) {
-				e.preventDefault();
-				e.stopPropagation();
-				const anchor = $($(this).attr('href')).get(0);
-
-				scroller.scrollTo(anchor);
-			});
-
-			$(window).afterResize(() => {
-				scroller.destroy();
-				initLocoScroll();
-			});
-
-		}, 100);
-
-		window.onbeforeunload = () => {
-		    window.scrollTo(0,0);
-		};
-
-	} else {
-
-		theme.fn.showErrorMessage('Failed to Load File', 'Failed to load: Locomotive Scroll - Include the following file(s): (vendor/locomotive-scroll/locomotive-scroll.min.js)');
-
-	}
-})).apply( this, [ jQuery ]);
+})).apply(this, [jQuery]);
