@@ -1,7 +1,7 @@
 /* ==========================================================================
    Queen Touch Technology — Homepage layout (index.html only)
-   Normal vertical document flow. Replaces the old horizontal Locomotive
-   Scroll "panel" layout. Not used by any other page.
+   Normal vertical document flow, premium enterprise composition.
+   Not used by any other page.
    ========================================================================== */
 
 .qtt-container {
@@ -10,38 +10,106 @@
   margin-right: auto;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+/* ---- Scroll reveal ---- */
+.qtt-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.qtt-reveal.qtt-in {
+  opacity: 1;
+  transform: none;
+}
+.qtt-reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.qtt-reveal-stagger.qtt-in > * {
+  opacity: 1;
+  transform: none;
+}
+.qtt-reveal-stagger.qtt-in > *:nth-child(2) { transition-delay: .08s; }
+.qtt-reveal-stagger.qtt-in > *:nth-child(3) { transition-delay: .16s; }
+.qtt-reveal-stagger.qtt-in > *:nth-child(4) { transition-delay: .24s; }
+.qtt-reveal-stagger.qtt-in > *:nth-child(5) { transition-delay: .32s; }
+.qtt-reveal-stagger.qtt-in > *:nth-child(6) { transition-delay: .4s; }
+.qtt-reveal-stagger.qtt-in > *:nth-child(7) { transition-delay: .48s; }
+.qtt-reveal-stagger.qtt-in > *:nth-child(8) { transition-delay: .56s; }
+
 /* ---- Header ---- */
 #header .header-logo img { display: block; }
+#header .header-body {
+  background-color: rgba(11,13,18,0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background-color .25s ease, box-shadow .25s ease;
+}
+#header.qtt-header-scrolled .header-body {
+  background-color: rgba(11,13,18,0.92);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+.qtt-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--qtt-blue);
+  color: #fff !important;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+  transition: background-color .15s ease;
+}
+.qtt-nav-cta:hover { background-color: var(--qtt-blue-dark); }
 
 /* ---- Hero ---- */
 .qtt-hero {
   background-color: var(--qtt-black);
   color: var(--qtt-white);
-  padding: 8rem 0 5rem;
-  min-height: 80vh;
+  padding: 7.5rem 0 4rem;
+  min-height: 78vh;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.qtt-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 992px) {
+  .qtt-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 2rem; }
 }
 .qtt-hero-eyebrow {
   color: #8FA0FF;
   font-weight: 600;
   font-size: 0.8125rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
   display: block;
 }
 .qtt-hero h1 {
   color: var(--qtt-white);
   font-weight: 700;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.15;
-  max-width: 46rem;
+  font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+  line-height: 1.14;
+  max-width: 24ch;
 }
 .qtt-hero p.lead {
   color: var(--qtt-gray);
   max-width: 38rem;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   margin-top: 1.25rem;
 }
 .qtt-hero-actions {
@@ -51,13 +119,63 @@
   margin-top: 2rem;
 }
 .qtt-hero-actions .qtt-btn {
-  padding: 0.85rem 1.75rem;
+  padding: 0.85rem 1.6rem;
   font-size: 0.95rem;
 }
+.qtt-hero .qtt-btn-outline {
+  color: var(--qtt-white);
+  border-color: rgba(255,255,255,0.5);
+}
+.qtt-hero .qtt-btn-outline:hover {
+  border-color: var(--qtt-blue);
+  color: #fff;
+  background-color: rgba(59,92,255,0.12);
+}
+.qtt-hero-visual {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  max-width: 460px;
+  margin: 0 auto;
+  width: 100%;
+}
+.qtt-hero-visual svg { width: 100%; height: 100%; display: block; }
+.qtt-node { animation: qtt-pulse 3.6s ease-in-out infinite; transform-origin: center; }
+.qtt-node-2 { animation-delay: .6s; }
+.qtt-node-3 { animation-delay: 1.2s; }
+.qtt-node-4 { animation-delay: 1.8s; }
+.qtt-node-5 { animation-delay: 2.4s; }
+@keyframes qtt-pulse {
+  0%, 100% { opacity: .55; r: 3.2; }
+  50% { opacity: 1; r: 4.4; }
+}
+.qtt-hero-line { stroke-dasharray: 4 6; animation: qtt-dash 30s linear infinite; }
+@keyframes qtt-dash { to { stroke-dashoffset: -400; } }
 
-/* ---- About (top, short intro) ---- */
+/* ---- Capability strip ---- */
+.qtt-capstrip {
+  background-color: var(--qtt-surface);
+  border-top: 1px solid #262A33;
+  border-bottom: 1px solid #262A33;
+  padding: 1.4rem 0;
+}
+.qtt-capstrip-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 2.5rem;
+}
+.qtt-capstrip-item {
+  color: #A8AFBD;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ---- About / Who We Are ---- */
 .qtt-about {
-  padding: 5rem 0;
+  padding: 4.5rem 0;
   background-color: var(--qtt-white);
 }
 .qtt-about-grid {
@@ -67,7 +185,7 @@
   align-items: center;
 }
 @media (min-width: 992px) {
-  .qtt-about-grid { grid-template-columns: 1.1fr 0.9fr; }
+  .qtt-about-grid { grid-template-columns: 1.05fr 0.95fr; }
 }
 .qtt-about-card {
   background-color: var(--qtt-bg-light);
@@ -75,54 +193,196 @@
   border-radius: 12px;
   padding: 2.5rem;
 }
-.qtt-about-card p {
-  color: var(--qtt-gray);
+.qtt-about-card p { color: var(--qtt-gray); }
+
+/* Ecosystem diagram */
+.qtt-ecosystem {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.qtt-ecosystem-node {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--qtt-white);
+  border: 1px solid #E7E9EE;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  position: relative;
+}
+.qtt-ecosystem-node .qtt-ecosystem-dot {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--qtt-blue);
+}
+.qtt-ecosystem-node span.label {
+  font-weight: 700;
+  color: var(--qtt-black);
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+}
+.qtt-ecosystem-connector {
+  width: 2px;
+  height: 1.5rem;
+  margin-left: 1.75rem;
+  background: linear-gradient(to bottom, #D9DCE3, #D9DCE3 50%, transparent 50%);
+  background-size: 2px 8px;
 }
 
-/* ---- Services ---- */
-.qtt-services-grid {
+/* ---- Expertise pillars ---- */
+.qtt-pillars-grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1.5rem;
-  margin-top: 2.5rem;
+  gap: 1.25rem;
+  margin-top: 2rem;
 }
 @media (min-width: 576px) {
-  .qtt-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .qtt-pillars-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (min-width: 1200px) {
-  .qtt-services-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .qtt-pillars-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
-.qtt-services-card {
+.qtt-pillar {
   border: 1px solid #262A33;
   border-radius: 12px;
   padding: 1.75rem;
   height: 100%;
+  transition: border-color .18s ease, transform .18s ease, background-color .18s ease;
 }
-.qtt-services-card h3 {
-  color: var(--qtt-white);
+.qtt-pillar:hover {
+  border-color: var(--qtt-blue);
+  transform: translateY(-3px);
+  background-color: rgba(59,92,255,0.06);
+}
+.qtt-pillar-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  background-color: rgba(59,92,255,0.14);
+  color: #93a5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.1rem;
 }
-.qtt-services-card h4 {
-  font-size: 0.95rem;
-  margin: 1rem 0 0.35rem;
-}
-.qtt-services-card h4 a {
+.qtt-pillar h3 {
   color: var(--qtt-white);
-  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
 }
-.qtt-services-card h4 a:hover { color: #93a5ff; }
-.qtt-services-card p {
+.qtt-pillar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.qtt-pillar li {
   color: #A8AFBD;
   font-size: 0.875rem;
-  line-height: 1.5;
+  padding: 0.3rem 0;
+  border-top: 1px solid #21242C;
+}
+.qtt-pillar li:first-child { border-top: none; }
+.qtt-pillar li a {
+  color: #A8AFBD;
+  text-decoration: none;
+  transition: color .15s ease;
+}
+.qtt-pillar li a:hover { color: #93a5ff; }
+
+/* ---- Industries ---- */
+.qtt-industries {
+  padding: 4.5rem 0;
+  background-color: var(--qtt-bg-light);
+}
+.qtt-industries-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .qtt-industries-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.qtt-industry {
+  background-color: var(--qtt-white);
+  border: 1px solid #E7E9EE;
+  border-radius: 10px;
+  padding: 1.35rem;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.qtt-industry:hover { border-color: var(--qtt-blue); transform: translateY(-2px); }
+.qtt-industry i {
+  color: var(--qtt-blue);
+  font-size: 1.15rem;
+  margin-bottom: 0.65rem;
+  display: block;
+}
+.qtt-industry h3 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--qtt-black);
+  margin-bottom: 0.3rem;
+}
+.qtt-industry p {
+  font-size: 0.8125rem;
+  color: var(--qtt-gray);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* ---- Process / How We Work ---- */
+.qtt-process {
+  padding: 4.5rem 0;
+  background-color: var(--qtt-white);
+}
+.qtt-process-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 2.5rem;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .qtt-process-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.qtt-process-step {
+  padding: 1.5rem 1.5rem 1.5rem 0;
+  border-top: 2px solid #E7E9EE;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .qtt-process-step { border-top-width: 3px; }
+  .qtt-process-step.qtt-active-line { border-top-color: var(--qtt-blue); }
+}
+.qtt-process-step .num {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--qtt-blue);
+  letter-spacing: 0.06em;
+  display: block;
+  margin-top: -0.6rem;
+  margin-bottom: 0.75rem;
+}
+.qtt-process-step h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--qtt-black);
+  margin-bottom: 0.5rem;
+}
+.qtt-process-step p {
+  font-size: 0.875rem;
+  color: var(--qtt-gray);
   margin: 0;
 }
 
-/* ---- Trust / stats ---- */
+/* ---- Trust / Why QTT ---- */
 .qtt-trust {
-  padding: 5rem 0;
+  padding: 4.5rem 0;
   background-color: var(--qtt-black);
   color: var(--qtt-white);
   text-align: center;
@@ -130,8 +390,8 @@
 .qtt-trust-grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1.5rem;
-  margin-top: 2.5rem;
+  gap: 1.25rem;
+  margin-top: 2rem;
   text-align: left;
 }
 @media (min-width: 576px) {
@@ -143,11 +403,13 @@
 .qtt-trust-item {
   border: 1px solid #262A33;
   border-radius: 12px;
-  padding: 1.75rem;
+  padding: 1.6rem;
+  transition: border-color .18s ease;
 }
+.qtt-trust-item:hover { border-color: var(--qtt-blue); }
 .qtt-trust-item h3 {
   color: #93a5ff;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
@@ -159,24 +421,23 @@
 
 /* ---- Insights ---- */
 .qtt-insights {
-  padding: 5rem 0;
+  padding: 4.5rem 0;
   background-color: var(--qtt-bg-light);
 }
 .qtt-insights-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
-  margin-top: 2.5rem;
+  gap: 2.5rem;
+  margin-top: 2rem;
 }
 @media (min-width: 992px) {
-  .qtt-insights-grid { grid-template-columns: 0.8fr 1.2fr; }
+  .qtt-insights-grid { grid-template-columns: 0.75fr 1.25fr; }
 }
 .qtt-insights-list-item {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 1.1rem 0;
   border-bottom: 1px solid #E7E9EE;
 }
 .qtt-insights-list-item:last-child { border-bottom: none; }
@@ -185,23 +446,64 @@
   font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   background-color: var(--qtt-black);
   color: var(--qtt-white);
   border-radius: 999px;
-  padding: 0.25rem 0.75rem;
+  padding: 0.3rem 0.75rem;
+  margin-top: 0.15rem;
 }
 .qtt-insights-list-item a {
   flex: 1 1 auto;
   color: var(--qtt-black);
   text-decoration: none;
   font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 .qtt-insights-list-item a:hover { color: var(--qtt-blue); }
 
+/* ---- Final CTA ---- */
+.qtt-final-cta {
+  padding: 4.5rem 0;
+  background-color: var(--qtt-blue);
+  color: #fff;
+  text-align: center;
+}
+.qtt-final-cta h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  max-width: 34ch;
+  margin: 0 auto;
+}
+.qtt-final-cta p {
+  color: rgba(255,255,255,0.88);
+  max-width: 40rem;
+  margin: 1rem auto 0;
+  font-size: 1.05rem;
+}
+.qtt-final-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.qtt-final-cta .qtt-btn-primary {
+  background-color: #fff;
+  color: var(--qtt-blue);
+}
+.qtt-final-cta .qtt-btn-primary:hover { background-color: #E9EDFF; color: var(--qtt-blue-dark); }
+.qtt-final-cta .qtt-btn-outline {
+  color: #fff;
+  border-color: rgba(255,255,255,0.5);
+}
+.qtt-final-cta .qtt-btn-outline:hover { border-color: #fff; color: #fff; background-color: rgba(255,255,255,0.1); }
+
 /* ---- Contact / CTA ---- */
 .qtt-contact {
-  padding: 5rem 0;
+  padding: 4.5rem 0;
   background-color: var(--qtt-black);
   color: var(--qtt-white);
 }
@@ -209,13 +511,16 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 @media (min-width: 992px) {
   .qtt-contact-grid { grid-template-columns: 0.8fr 1.2fr; }
 }
-.qtt-contact-info h4 { color: var(--qtt-white); opacity: 0.85; }
+.qtt-contact-info h4 { color: var(--qtt-white); opacity: 0.85; font-size: 1.05rem; }
+.qtt-contact-info h5 { font-size: 0.9rem; }
 .qtt-contact-info ul { list-style: none; padding: 0; }
+.qtt-contact-info li { font-size: 0.9375rem; line-height: 1.55; }
+.qtt-contact-info p { font-size: 0.875rem; line-height: 1.55; }
 .qtt-contact-info a { color: var(--qtt-white); text-decoration: none; }
 .qtt-contact-info a:hover { color: #93a5ff; }
 .qtt-contact-form .form-control {
@@ -240,3 +545,6 @@
   opacity: 0.8;
 }
 .qtt-contact-socials a:hover { opacity: 1; color: #93a5ff; }
+
+/* Footer styles moved to css/brand.css (shared site-wide, since every
+   internal page now uses the same blue footer, not just the homepage). */

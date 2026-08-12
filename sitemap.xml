@@ -23,6 +23,19 @@
   <url><loc>https://www.queentouchtech.com/what-we-do/sustainability-green-it.html</loc><priority>0.7</priority></url>
   <url><loc>https://www.queentouchtech.com/what-we-do/technology-infrastructure-services.html</loc><priority>0.7</priority></url>
 
+  <!-- Solutions -->
+  <url><loc>https://www.queentouchtech.com/solutions/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.queentouchtech.com/solutions/ai-automation/</loc><priority>0.7</priority></url>
+  <url><loc>https://www.queentouchtech.com/solutions/cloud-devops/</loc><priority>0.7</priority></url>
+  <url><loc>https://www.queentouchtech.com/solutions/digital-modernization/</loc><priority>0.7</priority></url>
+  <url><loc>https://www.queentouchtech.com/solutions/enterprise-software/</loc><priority>0.7</priority></url>
+  <url><loc>https://www.queentouchtech.com/solutions/erp-business-solutions/</loc><priority>0.7</priority></url>
+  <url><loc>https://www.queentouchtech.com/solutions/predictive-solutions/</loc><priority>0.7</priority></url>
+  <url><loc>https://www.queentouchtech.com/solutions/product-engineering/</loc><priority>0.7</priority></url>
+
+  <!-- Industries -->
+  <url><loc>https://www.queentouchtech.com/industries/</loc><priority>0.8</priority></url>
+
   <!-- Our Products -->
   <url><loc>https://www.queentouchtech.com/products/</loc><priority>0.8</priority></url>
   <url><loc>https://www.queentouchtech.com/products/edenza/</loc><priority>0.7</priority></url>
@@ -159,5 +172,10 @@
   <url><loc>https://www.queentouchtech.com/insights/website-and-app-services/how-to-build-a-website-that-converts-visitors-into-customers/</loc><priority>0.6</priority></url>
   <url><loc>https://www.queentouchtech.com/insights/website-and-app-services/why-whatsapp-alone-is-not-enough-to-grow-your-business/</loc><priority>0.6</priority></url>
   <url><loc>https://www.queentouchtech.com/insights/website-and-app-services/why-your-website-is-your-24-7-sales-representative/</loc><priority>0.6</priority></url>
+
+  <!-- Company -->
+  <url><loc>https://www.queentouchtech.com/careers/</loc><priority>0.6</priority></url>
+  <url><loc>https://www.queentouchtech.com/contact/</loc><priority>0.6</priority></url>
+  <url><loc>https://www.queentouchtech.com/why-qtt/</loc><priority>0.6</priority></url>
 
 </urlset>
