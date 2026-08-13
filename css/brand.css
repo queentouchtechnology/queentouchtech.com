@@ -5,6 +5,20 @@
    rules win on the specific classes below without touching the base theme.
    ========================================================================== */
 
+/* Shared responsive container (also used by the site-wide footer on every
+   page). Was previously defined only in qtt-home.css ("homepage only"),
+   which meant every other page's footer had zero width/centering/padding
+   applied to it — content ran flush to the browser edges. */
+.qtt-container {
+  width: min(100% - 32px, 1280px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
 :root {
   --qtt-black: #0B0D12;
   --qtt-surface: #171A21;
@@ -23,6 +37,17 @@
 .qtt-section-dark {
   background-color: var(--qtt-black);
   color: var(--qtt-white);
+}
+/* Anchor elements don't inherit color from an ancestor the way plain text
+   does — the theme's own `a { color: ... }` rule (tuned for light
+   backgrounds) wins instead, so links inside a `.list-icons` on a dark
+   section render in a dark, barely-visible color. Style them explicitly. */
+.qtt-section-dark .list-icons li,
+.qtt-section-dark .list-icons li a {
+  color: #A8AFBD;
+}
+.qtt-section-dark .list-icons li a:hover {
+  color: #93a5ff;
 }
 .qtt-eyebrow {
   display: inline-block;
@@ -371,6 +396,31 @@
   color: #fff;
 }
 
+/* ---- Related links panel (replaces old vertical "Other Services/Insights" sidebar) ---- */
+.qtt-related-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 2rem;
+  border: 1px solid #E7E9EE;
+  border-radius: 14px;
+  padding: 1.75rem 2.25rem;
+  background-color: var(--qtt-white);
+}
+.qtt-related-heading { flex: 0 0 auto; }
+.qtt-related-heading .qtt-eyebrow { display: block; margin-bottom: 0.2rem; }
+.qtt-related-heading h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--qtt-black);
+  white-space: nowrap;
+}
+.qtt-related-panel .qtt-chip-list { flex: 1 1 auto; }
+@media (max-width: 767px) {
+  .qtt-related-heading h3 { white-space: normal; }
+}
+
 /* ---- Insights editorial list ---- */
 .qtt-article-featured {
   border: 1px solid #E7E9EE;
@@ -479,11 +529,15 @@
   margin-bottom: 1rem;
 }
 .qtt-footer-col ul { list-style: none; padding: 0; margin: 0; }
-.qtt-footer-col li { margin-bottom: 0.55rem; }
-/* #footer.qtt-footer prefix required: theme.css ships
-   `#footer a:not(.btn):not(.no-footer-css) { color: var(--default); }`
-   (an ID selector) which otherwise beats a plain `.qtt-footer-col a`
-   class rule and silently repaints every footer link QTT gray. */
+#footer.qtt-footer .qtt-footer-col li { margin-bottom: 0.55rem; color: rgba(255,255,255,0.95); }
+/* #footer.qtt-footer prefix required on every rule below: both
+   css/theme.css (`#footer a:not(.btn):not(.no-footer-css) { color: var(--default); }`)
+   AND css/demos/demo-architecture-2.css (`#footer p, #footer li, #footer span,
+   #footer a:not(.btn):not(.no-footer-css) { color: #999; }`) are ID selectors
+   that beat a plain class rule regardless of load order, silently repainting
+   footer text and links gray on every page that loads that demo stylesheet
+   (i.e. every page except the homepage). Matching #footer's ID specificity
+   here fixes it at the source instead of patching each color individually. */
 #footer.qtt-footer .qtt-footer-col a {
   color: rgba(255,255,255,0.95);
   text-decoration: none;
@@ -492,7 +546,7 @@
   transition: color .15s ease, transform .15s ease;
 }
 #footer.qtt-footer .qtt-footer-col a:hover { color: #fff; transform: translateX(3px); }
-.qtt-footer-brand p { color: rgba(255,255,255,0.93); font-size: 0.875rem; max-width: 26rem; margin-top: 1rem; }
+#footer.qtt-footer .qtt-footer-brand p { color: rgba(255,255,255,0.93); font-size: 0.875rem; max-width: 26rem; margin-top: 1rem; }
 .qtt-footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.25);
   margin-top: 2.5rem;
@@ -503,7 +557,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.qtt-footer-bottom p { margin: 0; font-size: 0.8125rem; color: rgba(255,255,255,0.92); }
+#footer.qtt-footer .qtt-footer-bottom p { margin: 0; font-size: 0.8125rem; color: rgba(255,255,255,0.92); }
 .qtt-footer-socials { display: flex; gap: 0.9rem; }
 #footer.qtt-footer .qtt-footer-socials a { color: #fff; opacity: 0.85; transition: opacity .15s ease, transform .15s ease; }
 #footer.qtt-footer .qtt-footer-socials a:hover { opacity: 1; transform: translateY(-2px); }
