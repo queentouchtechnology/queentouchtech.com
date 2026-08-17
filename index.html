@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="format-detection" content="telephone=no">
 
-  <title>Queen Touch Technology (QTT): India’s Premier IT & Digital Transformation Partner</title>
+  <title>QTT: India’s Premier IT & Digital Transformation Partner</title>
 
   <meta name="description" content="Queen Touch Technology (QTT) empowers businesses with enterprise software, cloud & DevOps, AI & data analytics, IoT solutions, cybersecurity, and digital strategy services in India and worldwide.">
    <meta name="keywords" content="Queen Touch Technology, QTT, IT company in India, IT company in Thoothukudi, digital transformation, enterprise software, web development, mobile app development, cloud services, DevOps, AI and data analytics, IoT solutions, cybersecurity company India, managed IT services, digital strategy consulting, software development company Tamil Nadu">
@@ -251,6 +251,63 @@
       }
     ]
   }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is Queen Touch Technology?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Queen Touch Technology (QTT) is a software development company based in Thoothukudi, Tamil Nadu, India, founded by Sathish Kumar S."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Queen Touch Technology do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "QTT designs and builds custom software, websites, e-commerce platforms, mobile apps, and AI-driven automation for businesses, and also develops and maintains its own ready-made software products."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What services does Queen Touch Technology provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Custom software development, website development, e-commerce development, mobile app development, AI automation, ERP and CRM solutions, WhatsApp Business automation, chatbot development, API integration, cloud solutions, business process automation, UI/UX design, technical consulting, and website maintenance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What products does Queen Touch Technology offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Truth of Bible — Bible study platform supporting 160+ Bible translations; Quiz Master Plus — AI-powered Learning Management System; QTT ERP — complete ERP solution for business operations; Edenza — multi-seller e-commerce platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does Queen Touch Technology operate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "QTT is based in Thoothukudi, Tamil Nadu, India, and serves clients across Thoothukudi, Tuticorin, and Tamil Nadu, as well as businesses worldwide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who does Queen Touch Technology work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Small businesses, startups, SMEs, and enterprises — locally in Tamil Nadu and internationally — looking for custom software or ready-made products."
+      }
+    }
+  ]
 }
 </script>
 
@@ -843,6 +900,7 @@
 
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
+  <script src="js/qtt-analytics.js" defer></script>
 
 		<!-- Homepage-only: header glass state + scroll reveal -->
 		<script src="js/qtt-home.js"></script>
@@ -902,6 +960,9 @@ async function submitForm() {
 
     if (data.message === "Workflow was started") {
       showThemeModal("Message submitted successfully!");
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { event_category: 'contact_form' });
+      }
       clearForm();
     } else {
       showThemeModal("Something went wrong. Please try again.");
